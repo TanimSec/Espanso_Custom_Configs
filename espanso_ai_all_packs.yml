@@ -1,0 +1,421 @@
+matches:
+  # ==================== AI STARTER ====================
+  - trigger: ";terse"
+    replace: |
+      # Universal Terse Mode
+
+      Be concise without reducing intelligence, accuracy, judgment, or usefulness.
+
+      ## Response
+
+      - Answer directly
+      - Remove greetings, filler, repetition, and unnecessary transitions
+      - Prefer short bullets, compact tables, and clear structure
+      - Give the recommendation first when a decision is needed
+      - Match the requested depth
+      - Simple question → simplest complete answer
+      - Complex question → compress wording, not reasoning
+      - Do not restate the question unnecessarily
+      - Ask only essential clarifying questions
+      - Briefly state important uncertainty, assumptions, risks, or caveats
+
+      ## Reasoning
+
+      - Preserve critical analysis and good judgment
+      - Consider relevant alternatives and counterpoints
+      - Do not omit information just to save tokens
+      - Never trade correctness for brevity
+      - Think deeply, communicate concisely
+
+      ## Code
+
+      - Provide directly usable code
+      - Include necessary validation, security, error handling, and configuration
+      - Avoid unnecessary comments
+      - When code-only output is requested, output only the code
+
+      ## Research
+
+      - Prioritize the most relevant information
+      - Separate facts, assumptions, and recommendations when necessary
+      - Do not omit important counterpoints simply for brevity
+
+      ## Long Tasks
+
+      - Give actionable steps in the smallest useful format
+      - Do not compress steps so much that a beginner could not follow them
+      - Preserve exact commands, paths, settings, and values when they matter
+
+      ## Core Principle
+
+      Be terse in expression, not in intelligence.
+      Shorten wording, not thinking.
+      Preserve correctness, usefulness, judgment, and productivity.
+
+  - trigger: ";document"
+    replace: |
+      Turn the topic/conversation above into a case study document for long-term reference and learning.
+
+      Rules:
+      1. Explain it like teaching a smart beginner — plain language, no jargon without a one-line definition.
+      2. Structure: Overview → Problem/Context → How It Works → Key Decisions & Why → Diagram(s) → Results/Takeaways → Lessons Learned.
+      3. Add a Mermaid diagram (flowchart/sequence/architecture — pick what fits) wherever a process, flow, or relationship needs visualizing. Use fenced ```mermaid``` code blocks — renders natively in Notion.
+      4. Add a comparison table or simple chart description wherever numbers/options are being weighed (so it can become a real chart once in a database).
+      5. Use headings, bullets, and callout-style notes for anything critical — no dense paragraphs.
+      6. End with a 3-5 bullet "Quick Recap" for fast future skimming.
+
+      Output in clean Markdown — portable to Notion, Obsidian, or any doc tool. Do not ask clarifying questions; use best judgment on scope.
+
+  - trigger: ";deep"
+    replace: "Analyze deeply. Identify assumptions, alternatives, risks, and tradeoffs. Then recommend the best option. Preserve important reasoning while keeping the final answer concise."
+
+  - trigger: ";research"
+    replace: "Research this carefully. Prioritize authoritative and relevant sources. Separate facts, assumptions, uncertainties, and recommendations. Keep the final answer concise."
+
+  - trigger: ";explain"
+    replace: "Explain this clearly and directly. Start with the simplest useful explanation, then add only the detail needed for understanding."
+
+  - trigger: ";summary"
+    replace: "Summarize this into the key points and actionable takeaways. Remove repetition and low-value detail."
+
+  - trigger: ";compare"
+    replace: "Compare the options by key differences, advantages, disadvantages, risks, cost or effort, and best use case. Give a clear recommendation."
+
+  - trigger: ";decision"
+    replace: "Help me make the best decision. Identify the objective, options, tradeoffs, risks, and recommendation. Be concise but do not skip important considerations."
+
+  - trigger: ";rewrite"
+    replace: "Rewrite this for maximum clarity and natural flow. Preserve the original meaning. Remove unnecessary wording."
+
+  - trigger: ";pro"
+    replace: "Rewrite this professionally, clearly, and naturally. Preserve the intended meaning. Avoid unnecessary formality and filler."
+
+  - trigger: ";beginner"
+    replace: "Explain this for a beginner. Give exact steps in order. Do not skip important actions or assume prior knowledge."
+
+  - trigger: ";email"
+    replace: "Write a concise professional email. Clear purpose, necessary context, direct request or next step, polite closing."
+
+  - trigger: ";bullets"
+    replace: "Convert this into concise, logically grouped bullet points. Preserve all important information."
+
+  - trigger: ";action"
+    replace: "Turn this into a clear action plan with numbered steps, dependencies, and the next action."
+
+  - trigger: ";code"
+    replace: "Provide clean, directly usable code. Include necessary validation, security, error handling, and configuration. Avoid unnecessary explanation."
+
+  - trigger: ";debug"
+    replace: "Debug this systematically. Identify the likely root cause, explain the evidence briefly, then give the safest fix and verification steps."
+
+  # ==================== AI MODERATE ====================
+  - trigger: ";plan"
+    replace: "Create a practical implementation plan. Break the work into phases, dependencies, exact actions, verification points, and risks. Optimize for simplicity and reliability."
+
+  - trigger: ";audit"
+    replace: "Audit this critically. Find errors, gaps, hidden assumptions, security or reliability risks, and unnecessary complexity. Prioritize issues by impact and give fixes."
+
+  - trigger: ";optimize"
+    replace: "Optimize this for reliability, simplicity, speed, maintainability, and cost. Identify the biggest improvements first and explain meaningful tradeoffs."
+
+  - trigger: ";verify"
+    replace: "Verify the proposed solution before concluding. Check assumptions, edge cases, dependencies, configuration, and likely failure points. State what is confirmed versus uncertain."
+
+  - trigger: ";risk"
+    replace: "Perform a concise risk assessment. Identify likely failure modes, impact, probability, mitigation, and what should be monitored."
+
+  - trigger: ";teach"
+    replace: "Teach me this progressively: simple mental model, key concepts, practical example, common mistakes, then a short checklist."
+
+  - trigger: ";spec"
+    replace: "Turn this into a clear technical specification with objective, requirements, constraints, inputs, outputs, edge cases, acceptance criteria, and implementation notes."
+
+  - trigger: ";requirements"
+    replace: "Extract the functional and non-functional requirements. Separate must-have, should-have, nice-to-have, constraints, assumptions, and open questions."
+
+  - trigger: ";root"
+    replace: "Find the root cause rather than treating symptoms. Trace the issue logically, identify evidence needed, propose the smallest reliable fix, then define how to verify it."
+
+  - trigger: ";checklist"
+    replace: "Convert this into a concise execution checklist. Order items by dependency and include verification points where failure would matter."
+
+  - trigger: ";professional"
+    replace: "Make this polished, professional, concise, confident, and natural. Preserve meaning and important context. Avoid corporate filler."
+
+  - trigger: ";meeting"
+    replace: "Turn these meeting notes into decisions, action items, owners, deadlines, blockers, risks, and open questions."
+
+  - trigger: ";case"
+    replace: "Analyze this as a case study: situation, objective, constraints, options, decision, implementation, risks, outcome, and lessons learned."
+
+  # ==================== AI ADVANCED ====================
+  - trigger: ";architect"
+    replace: "Act as a senior systems architect. Design the simplest robust solution. Consider architecture, dependencies, scalability, security, reliability, observability, maintenance, cost, failure modes, and migration. Recommend one approach and explain the key tradeoffs."
+
+  - trigger: ";critic"
+    replace: "Challenge this proposal as a rigorous reviewer. Try to disprove assumptions, identify blind spots, edge cases, hidden costs, security issues, operational risks, and unintended consequences. Then suggest improvements."
+
+  - trigger: ";redteam"
+    replace: "Red-team this solution. Assume it can fail. Identify abuse cases, failure modes, operational weaknesses, security concerns, dependency risks, and misleading assumptions. Rank findings by severity and give mitigations."
+
+  - trigger: ";secondorder"
+    replace: "Analyze first-order and second-order effects. Consider what happens immediately, what happens later, who is affected, possible feedback loops, unintended consequences, and reversibility. Recommend the best path."
+
+  - trigger: ";tradeoffs"
+    replace: "Make the tradeoffs explicit. Compare short-term versus long-term impact, simplicity versus capability, cost versus reliability, speed versus quality, and flexibility versus complexity. Recommend the best balance."
+
+  - trigger: ";evidence"
+    replace: "Evaluate the evidence before accepting the conclusion. Separate facts, observations, interpretations, assumptions, weak evidence, missing evidence, and uncertainty. Identify what would change the conclusion."
+
+  - trigger: ";researchdeep"
+    replace: "Perform deep research. Establish the question and assumptions, gather the strongest relevant evidence, compare competing explanations or solutions, identify uncertainty and contradictions, then provide a concise evidence-based recommendation."
+
+  - trigger: ";decisionmatrix"
+    replace: "Build a decision matrix using the criteria that actually matter. Weight criteria when appropriate, score alternatives consistently, expose sensitivity to different assumptions, and recommend the strongest option."
+
+  - trigger: ";failure"
+    replace: "Perform a pre-mortem. Assume this project failed. List the most plausible causes across technical, operational, human, security, financial, and dependency categories. Prioritize preventable risks and mitigations."
+
+  - trigger: ";simplify"
+    replace: "Simplify this aggressively without weakening the result. Remove unnecessary components, steps, dependencies, abstractions, and process. Preserve reliability, security, correctness, and important edge cases."
+
+  - trigger: ";production"
+    replace: "Evaluate this as if it will run in production. Check security, reliability, monitoring, logging, backups, recovery, permissions, concurrency, performance, failure handling, maintainability, deployment, rollback, and operational ownership."
+
+  - trigger: ";finalcheck"
+    replace: "Before answering, silently check correctness, missing assumptions, contradictions, edge cases, safety, and whether the recommendation actually satisfies the objective. Then provide only the useful final answer."
+
+  - trigger: ";executive"
+    replace: "Answer for an executive decision-maker: recommendation first, key evidence, business impact, risks, cost or effort, and required decision. Keep it concise."
+
+  - trigger: ";teachdeep"
+    replace: "Teach this deeply but efficiently. Start with the mental model, connect the important concepts, show a realistic example, explain why common approaches fail, then provide a practical checklist."
+
+  - trigger: ";prompt"
+    replace: "Improve this prompt for another AI. Preserve the objective and constraints. Remove ambiguity, add only useful context, define the desired output, and optimize for reliable results without unnecessary verbosity."
+
+  # ==================== DAILY PERSONAL ====================
+  # Replace placeholder values with your own information.
+  - trigger: ";myemail"
+    replace: "YOUR_EMAIL@example.com"
+
+  - trigger: ";workemail"
+    replace: "YOUR_WORK_EMAIL@example.com"
+
+  - trigger: ";phone"
+    replace: "YOUR_PHONE_NUMBER"
+
+  - trigger: ";name"
+    replace: "YOUR_FULL_NAME"
+
+  - trigger: ";firstname"
+    replace: "YOUR_FIRST_NAME"
+
+  - trigger: ";lastname"
+    replace: "YOUR_LAST_NAME"
+
+  - trigger: ";company"
+    replace: "YOUR_COMPANY_NAME"
+
+  - trigger: ";jobtitle"
+    replace: "YOUR_JOB_TITLE"
+
+  - trigger: ";address"
+    replace: "YOUR_FULL_ADDRESS"
+
+  - trigger: ";city"
+    replace: "YOUR_CITY"
+
+  - trigger: ";country"
+    replace: "YOUR_COUNTRY"
+
+  - trigger: ";website"
+    replace: "https://YOUR_WEBSITE"
+
+  - trigger: ";linkedin"
+    replace: "YOUR_LINKEDIN_URL"
+
+  - trigger: ";signature"
+    replace: "Best regards,\nYOUR_FULL_NAME\nYOUR_JOB_TITLE\nYOUR_COMPANY_NAME"
+
+  # ==================== DAILY WORK ====================
+  - trigger: ";thanks"
+    replace: "Thank you for your message."
+
+  - trigger: ";thx"
+    replace: "Thanks for the update."
+
+  - trigger: ";noted"
+    replace: "Noted, thank you."
+
+  - trigger: ";received"
+    replace: "Received, thank you."
+
+  - trigger: ";confirmed"
+    replace: "Confirmed. Thank you."
+
+  - trigger: ";followup"
+    replace: "Just following up on the message below. Please let me know if there is any update."
+
+  - trigger: ";reminder"
+    replace: "Just a quick reminder regarding the request below. Please let me know when you have an update."
+
+  - trigger: ";pleasecheck"
+    replace: "Please check and let me know if any changes are required."
+
+  - trigger: ";pleasereview"
+    replace: "Please review and let me know if you have any comments or required changes."
+
+  - trigger: ";pleaseconfirm"
+    replace: "Please confirm once reviewed."
+
+  - trigger: ";pleaseadvise"
+    replace: "Please advise on the next steps."
+
+  - trigger: ";anyupdate"
+    replace: "Could you please share an update when convenient?"
+
+  - trigger: ";working"
+    replace: "I am working on this and will share an update once it is completed."
+
+  - trigger: ";checking"
+    replace: "I am checking this with the relevant team and will update you once I have confirmation."
+
+  - trigger: ";delay"
+    replace: "There has been a slight delay. I will share an update as soon as possible."
+
+  - trigger: ";sorry"
+    replace: "Apologies for the delay and any inconvenience caused."
+
+  - trigger: ";attached"
+    replace: "Please find the requested document attached."
+
+  - trigger: ";attachment"
+    replace: "Please see the attached file for your reference."
+
+  - trigger: ";fyi"
+    replace: "For your information."
+
+  - trigger: ";urgent"
+    replace: "Please treat this as a priority and let me know if anything is required from my side."
+
+  - trigger: ";availability"
+    replace: "Please let me know your availability so we can schedule a suitable time."
+
+  - trigger: ";meeting"
+    replace: "Please let me know a convenient time for a meeting."
+
+  - trigger: ";schedule"
+    replace: "Please share your preferred date and time so we can schedule accordingly."
+
+  - trigger: ";call"
+    replace: "Please let me know when you are available for a quick call."
+
+  - trigger: ";tomorrow"
+    replace: "I will follow up on this tomorrow."
+
+  - trigger: ";eod"
+    replace: "I will share an update by the end of the day."
+
+  - trigger: ";asap"
+    replace: "Please share this as soon as possible."
+
+  # ==================== COMMON EMAIL OPENINGS ====================
+  - trigger: ";hi"
+    replace: "Hi,"
+
+  - trigger: ";hello"
+    replace: "Hello,"
+
+  - trigger: ";dear"
+    replace: "Dear Sir/Madam,"
+
+  - trigger: ";goodmorning"
+    replace: "Good morning,"
+
+  - trigger: ";goodafternoon"
+    replace: "Good afternoon,"
+
+  - trigger: ";regards"
+    replace: "Best regards,"
+
+  - trigger: ";thanksregards"
+    replace: "Thank you.\n\nBest regards,"
+
+  # ==================== COMMON BUSINESS PHRASES ====================
+  - trigger: ";pleasefind"
+    replace: "Please find the requested information below."
+
+  - trigger: ";asdiscussed"
+    replace: "As discussed,"
+
+  - trigger: ";asper"
+    replace: "As per our discussion,"
+
+  - trigger: ";notedwiththanks"
+    replace: "Noted with thanks."
+
+  - trigger: ";keepupdated"
+    replace: "I will keep you updated on the progress."
+
+  - trigger: ";letmeknow"
+    replace: "Please let me know if you need any further information."
+
+  - trigger: ";questions"
+    replace: "Please let me know if you have any questions."
+
+  - trigger: ";appreciate"
+    replace: "Your assistance would be greatly appreciated."
+
+  - trigger: ";support"
+    replace: "Please let me know if any support is required from my side."
+
+  - trigger: ";nextsteps"
+    replace: "Please advise on the next steps."
+
+  - trigger: ";approved"
+    replace: "Approved from my side."
+
+  - trigger: ";pending"
+    replace: "This is currently pending confirmation."
+
+  - trigger: ";complete"
+    replace: "This has been completed as requested."
+
+  - trigger: ";inprogress"
+    replace: "This is currently in progress."
+
+  # ==================== COMMON DATA ====================
+  - trigger: ";date"
+    replace: "DD-MM-YYYY"
+
+  - trigger: ";time"
+    replace: "HH:MM"
+
+  - trigger: ";companydetails"
+    replace: "YOUR_COMPANY_NAME\nYOUR_ADDRESS\nYOUR_PHONE\nYOUR_EMAIL\nYOUR_WEBSITE"
+
+  - trigger: ";bankdetails"
+    replace: "Account Name: YOUR_ACCOUNT_NAME\nAccount Number: YOUR_ACCOUNT_NUMBER\nBank: YOUR_BANK_NAME\nBranch: YOUR_BRANCH\nSWIFT: YOUR_SWIFT_CODE"
+
+  # ==================== SOCIAL / CASUAL ====================
+  - trigger: ";np"
+    replace: "No problem."
+
+  - trigger: ";sure"
+    replace: "Sure, will do."
+
+  - trigger: ";okay"
+    replace: "Okay, noted."
+
+  - trigger: ";gotit"
+    replace: "Got it."
+
+  - trigger: ";willdo"
+    replace: "Will do."
+
+  - trigger: ";onit"
+    replace: "I am on it."
+
+  - trigger: ";backsoon"
+    replace: "I will get back to you shortly."
